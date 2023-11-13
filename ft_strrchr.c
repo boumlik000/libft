@@ -1,19 +1,34 @@
-#include "header.h"
-char *ft_strrchr(const char *s,int c)
-{
-    int i = 0;
-    int j = 0;
-    while (s[i])
-    {
-        i++;
-    }
-    j = i--;
-    while(j>=0)
-    {
-        if(s[j]== c)
-            return (char *)s+j;
-        j--;
-    }    
-    return 0;
-}
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mboumlik <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/13 18:06:13 by mboumlik          #+#    #+#             */
+/*   Updated: 2023/11/13 18:06:18 by mboumlik         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "header.h"
+
+char	*ft_strrchr(const char *s, int c)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (s[i])
+	{
+		i++;
+	}
+	j = i--;
+	while (j >= 0)
+	{
+		if (s[j] == c)
+			return ((char *)s + j);
+		j--;
+	}
+	return (0);
+}

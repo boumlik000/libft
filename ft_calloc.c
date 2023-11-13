@@ -1,25 +1,31 @@
-#include<stdlib.h>
-#include<stdio.h>
-void * ft_calloc(size_t count, size_t size)
-{
-    int i = count * size;
-    void * x;
-    x= malloc(i);
-    char *t = (char *)x;
-    i--;
-    while (i>=0)
-    {
-        t[i] = 0;
-        i--;
-    }
-    return x;
-}
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mboumlik <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/13 16:47:33 by mboumlik          #+#    #+#             */
+/*   Updated: 2023/11/13 16:47:35 by mboumlik         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "header.h"
 
-int main()
+void	*ft_calloc(size_t count, size_t size)
 {
-    int *src=(int *) ft_calloc(5,8);
-    for (int i = 0; i < 5; i++)
-        printf("%d\n",src[i]);
-    return 0;
+	size_t	i;
+	void	*x;
+	char	*t;
+
+	i = count * size;
+	x = malloc(i);
+	t = (char *)x;
+	i--;
+	while (i >= 0)
+	{
+		t[i] = 0;
+		i--;
+	}
+	return (x);
 }
