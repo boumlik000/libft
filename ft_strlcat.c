@@ -1,13 +1,6 @@
-#include<stdio.h>
-unsigned int ft_strlen(const char *x)
-{
-    int i = 0;
-    while(x[i])
-        i++;
-    return i;
-}
-int ft_strlcat(char *dest, const char *src,size_t n){
-    
+#include "header.h"
+size_t ft_strlcat(char *dest, const char *src,size_t n)
+{    
     int dst = ft_strlen(dest);
     int i = 0;
 
@@ -23,11 +16,4 @@ int ft_strlcat(char *dest, const char *src,size_t n){
 
 
 }
-int  main()
-{
-    char src[] = "ana";
-    char dst[1];
-    printf("%d => %s \n",ft_strlcat(dst,src,8),dst);
-    //printf("%lu => %s \n",strlcat(dst,src,8),dst);
-    return 0;
-}
+

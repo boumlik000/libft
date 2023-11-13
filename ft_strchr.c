@@ -1,5 +1,4 @@
-#include<stdio.h>
-// #include <string.h>
+#include "header.h"
 char * ft_strchr(const char *s, int c)
 {
     int i = 0;
@@ -9,9 +8,4 @@ char * ft_strchr(const char *s, int c)
         return 0;
 
     return (char *)s+i;
-}
-int main ()
-{
-    char x[] = "oham ed";
-    printf("%s\n",ft_strchr(x,'m'));
 }

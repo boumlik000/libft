@@ -1,19 +1,14 @@
-#include<stdio.h>
-void * memset(void *b, int c, size_t len)
-{
-    unsigned char *x = b;
-    unsigned char y = (unsigned char) c;
+#include "header.h"
 
-    unsigned int i = 0;
+void * ft_memset(void *big, int to_find, size_t len)
+{
+    size_t i = 0;
+    char *str = (char *)big;
     while (i < len)
     {
-        x[i]=y;
+        str[i] = to_find;
         i++;
     }
-    return b;
-}
-int main()
-{
-    // char z[] = "hello";
-    // printf("%d\n",ft_memset())
+    return (big);
+    
 }

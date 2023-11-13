@@ -1,6 +1,4 @@
-#include <stdlib.h>
-#include <stdio.h>
-
+#include "header.h"
 char	*ft_strdup(const char *src)
 {
 	int		i;
@@ -24,13 +22,4 @@ char	*ft_strdup(const char *src)
 	dup[j] = '\0';
 	return (dup);
 }
-int main(int argc, char const *argv[])
-{
-    const char src[] = "alo";
-    char *dest = ft_strdup(src);
-    printf("%s\n",src);
-    printf("%s\n",dest);
 
-    free(dest);
-    return 0;
-}

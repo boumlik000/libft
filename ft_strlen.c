@@ -1,5 +1,5 @@
-#include<stdio.h>
-unsigned int ft_strlen(const char *x)
+#include "header.h"
+size_t ft_strlen(const char *x)
 {
     int i = 0;
     while(x[i])
@@ -7,9 +7,4 @@ unsigned int ft_strlen(const char *x)
         i++;
     }
     return i;
-}
-int main ()
-{
-    char a[] = "alo";
-    printf("%d\n",ft_strlen(a));
 }
