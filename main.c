@@ -14,8 +14,5 @@
 
 int	main(void)
 {
-	int	ch1;
-
-	ch1 = 2147483648;
-	ft_putnbr_fd(ch1, 1);
+    printf("%s",ft_strjoin("",NULL));
 }
