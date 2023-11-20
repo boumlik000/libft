@@ -14,5 +14,15 @@
 
 int	main(void)
 {
-    printf("%s",ft_strjoin("",NULL));
+    
+    char *result = itoa(05);
+    if (result != NULL) {
+        printf("Result: %s\n", result);
+        free(result); // Free the allocated memory after use
+    } else {
+        printf("Memory allocation failed.\n");
+    }
+    return 0;
+    
+
 }
