@@ -1,37 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/22 09:37:47 by mboumlik          #+#    #+#             */
-/*   Updated: 2023/11/22 09:41:15 by mboumlik         ###   ########.fr       */
+/*   Created: 2023/11/22 09:29:45 by mboumlik          #+#    #+#             */
+/*   Updated: 2023/11/22 09:43:45 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-char	*ft_substr(char const *str, unsigned int start, size_t len)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	size_t	i;
-	size_t	j;
-	char	*substr;
+	unsigned int	i;
 
 	i = 0;
-	j = 0;
-	if (str == NULL)
-		return (NULL);
-	i = ft_strlen(str);
-	if (start >= i)
-		return (NULL);
-	if (i - start < len)
-		j = i - start;
-	else
-		j = len;
-	substr = (char *)malloc(sizeof(char) * (j + 1));
-	if (substr == NULL)
-		return (NULL);
-	ft_memcpy(substr, str + start, j);
-	return (substr);
+	if (!s || !f)
+		return ;
+	while (s[i])
+	{
+		f(i, &s[i]);
+		i++;
+	}
 }

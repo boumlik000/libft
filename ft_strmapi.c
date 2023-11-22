@@ -1,37 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/22 09:37:47 by mboumlik          #+#    #+#             */
-/*   Updated: 2023/11/22 09:41:15 by mboumlik         ###   ########.fr       */
+/*   Created: 2023/11/21 11:25:08 by mboumlik          #+#    #+#             */
+/*   Updated: 2023/11/22 09:45:18 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-char	*ft_substr(char const *str, unsigned int start, size_t len)
+static char	*str_allocation(size_t n)
 {
-	size_t	i;
-	size_t	j;
-	char	*substr;
+	char	*p;
 
-	i = 0;
-	j = 0;
-	if (str == NULL)
+	p = (char *)malloc(sizeof(char) * (n + 1));
+	if (p == NULL)
 		return (NULL);
-	i = ft_strlen(str);
-	if (start >= i)
+	return (p);
+}
+
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{
+	size_t	n;
+	char	*string;
+	char	*result;
+
+	if (s == NULL)
 		return (NULL);
-	if (i - start < len)
-		j = i - start;
-	else
-		j = len;
-	substr = (char *)malloc(sizeof(char) * (j + 1));
-	if (substr == NULL)
+	string = str_allocation(ft_strlen(s));
+	if (string == NULL)
 		return (NULL);
-	ft_memcpy(substr, str + start, j);
-	return (substr);
+	n = 0;
+	while (s[n])
+	{
+		string[n] = f(n, s[n]);
+		n++;
+	}
+	string[n] = '\0';
+	return (string);
 }

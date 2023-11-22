@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   header.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mboumlik <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 15:58:02 by mboumlik          #+#    #+#             */
-/*   Updated: 2023/11/13 15:58:06 by mboumlik         ###   ########.fr       */
+/*   Updated: 2023/11/22 07:22:46 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,12 @@
 # define HEADER_H
 # include <ctype.h>
 # include <stddef.h>
+# include <stddef.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
 # include <strings.h>
 # include <unistd.h>
-# include  <stddef.h>
-
 
 int		ft_isalnum(int x);
 int		ft_isalpha(int str);
@@ -48,9 +47,11 @@ void	*ft_calloc(size_t count, size_t size);
 // part2
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
-char    *ft_strtrim(char const *s1, char const *set);
-char    **ft_split(char const *s, char c);
-char    *ft_itoa(int n);
+char	*ft_strtrim(char const *s1, char const *set);
+char	**ft_split(char const *s, char c);
+char	*ft_itoa(int n);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);

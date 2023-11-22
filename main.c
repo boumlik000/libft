@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mboumlik <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 18:08:50 by mboumlik          #+#    #+#             */
-/*   Updated: 2023/11/13 18:08:52 by mboumlik         ###   ########.fr       */
+/*   Updated: 2023/11/22 09:55:40 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,9 @@
 
 int	main(void)
 {
-    
-    char *result = itoa(05);
-    if (result != NULL) {
-        printf("Result: %s\n", result);
-        free(result); // Free the allocated memory after use
-    } else {
-        printf("Memory allocation failed.\n");
-    }
-    return 0;
-    
+	char	input_string[] = "alo";
 
+	ft_striteri(input_string, &uppercase);
+	printf("Modified string: %s\n", input_string);
+	return (0);
 }
