@@ -6,17 +6,19 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 18:08:50 by mboumlik          #+#    #+#             */
-/*   Updated: 2023/11/22 09:55:40 by mboumlik         ###   ########.fr       */
+/*   Updated: 2023/11/24 16:44:13 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-int	main(void)
+int main()
 {
-	char	input_string[] = "alo";
-
-	ft_striteri(input_string, &uppercase);
-	printf("Modified string: %s\n", input_string);
-	return (0);
+	char **p = ft_split(NULL,0);
+	int i = 0;
+	while (p[i])
+		printf("%s\n", p[i++]);
 }
+	
+		
+

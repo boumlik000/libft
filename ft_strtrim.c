@@ -6,7 +6,7 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 09:46:17 by mboumlik          #+#    #+#             */
-/*   Updated: 2023/11/22 10:02:37 by mboumlik         ###   ########.fr       */
+/*   Updated: 2023/11/24 09:22:41 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		len--;
 	}
 	if (len - x == 0)
-		return ((char *)(len));
+		return ((char *)(&s1[len]));
 	result = (char *)malloc((sizeof(char) * (len - x + 1)));
 	ft_memcpy(result, s1 + x, len - x);
 	result[len - x] = '\0';
