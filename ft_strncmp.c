@@ -10,18 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
 
+	unsigned char *x;
+	unsigned char *y;
+	x = (unsigned char *)s1;
+	y = (unsigned char *)s2;
 	i = 0;
-	while (i < n && (s1[i] || s2[i]))
+	if(!n)
+		return (0);
+	while (i < n && (x[i] || y[i]))
 	{
-		if (s1[i] != s2[i])
+		if (x[i] != y[i])
 		{
-			return (s1[i] - s2[i]);
+			return (x[i] - y[i]);
 		}
 		i++;
 	}

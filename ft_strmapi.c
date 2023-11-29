@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "libft.h"
 
 static char	*str_allocation(size_t n)
 {
@@ -26,7 +26,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	size_t	n;
 	char	*string;
-	char	*result;
 
 	if (s == NULL)
 		return (NULL);

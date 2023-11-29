@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "libft.h"
 
 static size_t	num_length(long int n)
 {
-	int	length;
+	size_t	length;
 
 	length = 1;
 	if (n < 0)
@@ -33,16 +33,14 @@ static size_t	num_length(long int n)
 char	*ft_itoa(int n)
 {
 	long int	t;
-	int			length;
+	size_t			length;
 	char		*str;
 
 	t = n;
 	length = num_length(t);
 	str = (char *)malloc(sizeof(char) * (length + 1));
 	if (str == NULL)
-	{
 		return (NULL);
-	}
 	if (n < 0)
 	{
 		str[0] = '-';

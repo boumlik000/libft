@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "libft.h"
 
 char	**freefun(char **p, int j)
 {
@@ -64,7 +64,7 @@ char	**malword(const char *str, char s, char **p)
 			i++;
 		if (start != i)
 			p[j] = (char *)malloc(sizeof(char) * ((i - start) + 1));
-		if (!p)
+		if (!p[j])
 			return (freefun(p, j));
 		j++;
 		if (str[i] == '\0')
@@ -107,20 +107,13 @@ char	**ft_split(char const *s, char c)
 	if(!s)
 		return NULL;
 	char	**p;
-	if (c == 0)
-	{
-		p = (char **)malloc(sizeof(char *) * 2);
-		p[0] = ft_strdup(s);
-		p[1] = NULL;
-		return (p);
-	}
-	p = (char **)malloc(sizeof(char *) * (words_nbr(s, c) + 1));
+	p = (char **)malloc(sizeof(char *) * ((words_nbr(s, c) + 1)));
 	if (!p)
 		return (NULL);
 	p = malword(s, c, p);
 	if (!p)
 		return (NULL);
 	p = word(s, c, p);
-	p[words_nbr(s, c) + 1] = NULL;
+	p[words_nbr(s, c)] = NULL;
 	return (p);
 }

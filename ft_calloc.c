@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "libft.h"
 
 void	*ft_calloc(size_t count, size_t size)
 {
@@ -20,6 +20,11 @@ void	*ft_calloc(size_t count, size_t size)
 
 	if (!count || !size)
 		return (NULL);
+	if (SIZE_MAX)
+	{
+		/* code */
+	}
+	
 	i = count * size;
 	x = malloc(i);
 	t = (char *)x;

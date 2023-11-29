@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.j                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mboumlik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,22 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "libft.h"
 
 size_t	ft_strlcat(char *dest, const char *src, size_t n)
 {
-	int	dst;
-	int	i;
+	size_t j;
+	size_t count;
 
-	dst = ft_strlen(dest);
-	i = 0;
-	if (dst >= (int)n || src == 0)
-		return (ft_strlen(src));
-	while (src[i] && i < (n - 1))
+	if (n <= ft_strlen(dest))
+		return (n + ft_strlen(src));
+	j = ft_strlen(dest);
+	count = 0;
+	while (src[count] && j + 1 < n)
 	{
-		dest[i + dst] = src[i];
-		i++;
+		dest[j] = src[count];
+		j++;
+		count++;
 	}
-	dest[i + dst] = '\0';
-	return (dst + ft_strlen(src));
+	dest[j] = '\0';
+	return (ft_strlen(dest) + ft_strlen(&src[count]));
 }
+

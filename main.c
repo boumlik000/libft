@@ -6,18 +6,16 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 18:08:50 by mboumlik          #+#    #+#             */
-/*   Updated: 2023/11/24 16:44:13 by mboumlik         ###   ########.fr       */
+/*   Updated: 2023/11/28 14:27:59 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "libft.h"
 
 int main()
 {
-	char **p = ft_split(NULL,0);
-	int i = 0;
-	while (p[i])
-		printf("%s\n", p[i++]);
+	printf("%s , %zu",ft_itoa(0), strlen(ft_itoa(0)));
+
 }
 	
 		
