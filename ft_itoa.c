@@ -1,57 +1,89 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoi.c                                          :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/20 08:14:19 by mboumlik          #+#    #+#             */
-/*   Updated: 2023/11/22 09:30:47 by mboumlik         ###   ########.fr       */
+/*   Created: 2023/11/29 17:09:43 by mboumlik          #+#    #+#             */
+/*   Updated: 2023/11/29 17:12:17 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	num_length(long int n)
+static size_t	bytes(long n)
 {
-	size_t	length;
+	size_t	i;
 
-	length = 1;
+	i = 0;
+	if (n == 0)
+		i++;
 	if (n < 0)
 	{
-		length++;
-		n = -n;
+		n *= -1;
+		i++;
 	}
-	while (n >= 10)
+	while (n > 0)
 	{
-		length++;
 		n /= 10;
+		i++;
 	}
-	return (length);
+	return (i);
+}
+
+static char	*ft_strrev(char *str)
+{
+	size_t	i;
+	size_t	j;
+	char	p;
+
+	i = 0;
+	j = ft_strlen(str) - 1;
+	while (j > i)
+	{
+		p = str[i];
+		str[i] = str[j];
+		str[j] = p;
+		i++;
+		j--;
+	}
+	return (str);
+}
+
+static char	*str_content(long b, char *p, size_t j)
+{
+	size_t	i;
+
+	i = 0;
+	if (b < 0)
+	{
+		b *= -1;
+		p[j - 1] = '-';
+	}
+	if (b == 0)
+		p[i] = '0';
+	while (b > 0)
+	{
+		p[i++] = (b % 10) + '0';
+		b /= 10;
+	}
+	p[j] = '\0';
+	ft_strrev(p);
+	return (p);
 }
 
 char	*ft_itoa(int n)
 {
-	long int	t;
-	size_t			length;
-	char		*str;
+	char	*p;
+	long	b;
+	size_t	j;
 
-	t = n;
-	length = num_length(t);
-	str = (char *)malloc(sizeof(char) * (length + 1));
-	if (str == NULL)
+	b = n;
+	j = bytes(b);
+	p = malloc((j * sizeof(char)) + 1);
+	if (!p)
 		return (NULL);
-	if (n < 0)
-	{
-		str[0] = '-';
-		t = -t;
-	}
-	str[length] = '\0';
-	while (length > 0 && str[length - 1] != '-')
-	{
-		str[length - 1] = (t % 10) + '0';
-		t /= 10;
-		length--;
-	}
-	return (str);
+	p = str_content(b, p, j);
+	return (p);
 }

@@ -14,8 +14,7 @@
 
 int main()
 {
-	printf("%s , %zu",ft_itoa(0), strlen(ft_itoa(0)));
-
+	ft_putstr_fd("charaf tt9iil", 1);
 }
 	
 		
