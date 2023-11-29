@@ -47,8 +47,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (len - x == 0)
 		return ((char *)(&s1[len]));
 	result = (char *)malloc((sizeof(char) * (len - x + 1)));
-	if(!result)
-		return NULL;
+	if (!result)
+		return (NULL);
 	ft_memcpy(result, s1 + x, len - x);
 	result[len - x] = '\0';
 	return (result);

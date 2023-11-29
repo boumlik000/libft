@@ -6,16 +6,12 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 18:08:50 by mboumlik          #+#    #+#             */
-/*   Updated: 2023/11/28 14:27:59 by mboumlik         ###   ########.fr       */
+/*   Updated: 2023/11/29 17:44:55 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int main()
+int	main(void)
 {
-	ft_putstr_fd("charaf tt9iil", 1);
 }
-	
-		
-

@@ -6,7 +6,7 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 21:14:34 by mboumlik          #+#    #+#             */
-/*   Updated: 2023/11/24 16:40:07 by mboumlik         ###   ########.fr       */
+/*   Updated: 2023/11/29 18:22:12 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ char	**malword(const char *str, char s, char **p)
 	}
 	return (p);
 }
+
 char	**word(const char *str, char s, char **p)
 {
 	int	i;
@@ -104,9 +105,10 @@ char	**word(const char *str, char s, char **p)
 
 char	**ft_split(char const *s, char c)
 {
-	if(!s)
-		return NULL;
 	char	**p;
+
+	if (!s)
+		return (NULL);
 	p = (char **)malloc(sizeof(char *) * ((words_nbr(s, c) + 1)));
 	if (!p)
 		return (NULL);
