@@ -6,7 +6,7 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 18:02:58 by mboumlik          #+#    #+#             */
-/*   Updated: 2023/11/26 12:10:18 by mboumlik         ###   ########.fr       */
+/*   Updated: 2023/11/30 17:51:08 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t n)
 	size_t	srcsize;
 	size_t	i;
 
-	if (dst == 0 || src == 0)
-		return (0);
-	srcsize = ft_strlen(src);
+	srcsize = ft_strlen((char *)src);//ntfkrha
 	i = 0;
 	if (n != 0)
 	{

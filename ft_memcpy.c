@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mboumlik <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 17:09:21 by mboumlik          #+#    #+#             */
-/*   Updated: 2023/11/13 17:09:23 by mboumlik         ###   ########.fr       */
+/*   Updated: 2023/11/30 03:55:13 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 
 	source = (unsigned char *)src;
 	destination = (unsigned char *)dest;
+	if (dest == src)
+		return (dest);
 	if (destination == NULL && source == NULL)
 		return (NULL);
 	i = 0;

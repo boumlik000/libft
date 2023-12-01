@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.j                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mboumlik <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 18:02:20 by mboumlik          #+#    #+#             */
-/*   Updated: 2023/11/13 18:02:21 by mboumlik         ###   ########.fr       */
+/*   Updated: 2023/11/30 17:57:22 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,27 @@
 
 size_t	ft_strlcat(char *dest, const char *src, size_t n)
 {
-	size_t	j;
-	size_t	count;
+	size_t	len_s;
+	size_t	len_d;
+	size_t	i;
+	size_t	sum;
 
-	if (n <= ft_strlen(dest))
-		return (n + ft_strlen(src));
-	j = ft_strlen(dest);
-	count = 0;
-	while (src[count] && j + 1 < n)
+	if (!dest && !n)
+		return (0);
+	len_s = ft_strlen(src);
+	len_d = ft_strlen(dest);
+	i = 0;
+	if (len_d > n)
+		sum = len_s + n;
+	else
+		sum = len_s + len_d;
+	if (n == 0)
+		return (sum);
+	while (src[i] && i + len_d < n - 1)
 	{
-		dest[j] = src[count];
-		j++;
-		count++;
+		dest[len_d + i] = src[i];
+		i++;
 	}
-	dest[j] = '\0';
-	return (ft_strlen(dest) + ft_strlen(&src[count]));
+	dest[len_d + i] = '\0';
+	return (sum);
 }

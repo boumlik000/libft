@@ -13,16 +13,16 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <ctype.h>
-# include <stddef.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
 # include <strings.h>
 # include <unistd.h>
+# include <stddef.h>
 
 int		ft_isalnum(int x);
 int		ft_isalpha(int str);
-int		ft_isascci(int x);
+int		ft_isascii(int x);
 int		ft_isdigit(int c);
 int		ft_isprint(int x);
 int		ft_toupper(int x);
@@ -31,7 +31,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strdup(const char *src);
-char	*ft_strnstr(const char *full_string, const char *to_find, int n);
+char	*ft_strnstr(const char *str, const char *str1, size_t len);
 size_t	ft_strlen(const char *x);
 size_t	ft_strlcpy(char *dst, const char *src, size_t n);
 size_t	ft_strlcat(char *dest, const char *src, size_t n);
