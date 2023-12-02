@@ -6,22 +6,13 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 21:14:34 by mboumlik          #+#    #+#             */
-/*   Updated: 2023/11/30 22:20:33 by mboumlik         ###   ########.fr       */
+/*   Updated: 2023/12/01 19:06:42 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**freefun(char **p, int j)
-{
-	while (j >= 0)
-	{
-		free(p[j]);
-		j--;
-	}
-	free(p);
-	return (NULL);
-}
+#include "libft.h"
 
 int	words_nbr(const char *str, char s)
 {
@@ -46,76 +37,81 @@ int	words_nbr(const char *str, char s)
 	}
 	return (words_count);
 }
-
-char	**malword(const char *str, char s, char **p)
+char    *malloc_word(const char *s, int b, int e)
 {
-	int	i;
-	int	j;
-	int	start;
+    int i;
+    char *str;
 
-	i = 0;
-	j = 0;
-	while (str[i])
-	{
-		while (str[i] && str[i] == s)
-			i++;
-		start = i;
-		while (str[i] && str[i] != s)
-			i++;
-		if (start != i)
-			p[j] = (char *)malloc(sizeof(char) * ((i - start) + 1));
-		if (!p[j])
-			return (freefun(p, j));
-		j++;
-		if (str[i] == '\0')
-			return (p);
-		i++;
-	}
-	return (p);
+    str = (char *)malloc((e - b + 1) * sizeof(char));
+    if (!str)
+        return (NULL);
+    i = 0;
+    while(b < e)
+    {
+        str[i] = s[b];
+        i++;
+        b++;
+    }
+    str[i] = '\0';
+    return str;
 }
-
-char	**word(const char *str, char s, char **p)
+char	**freefun(char **p, int j)
 {
-	int	i;
-	int	j;
-	int	start;
-
-	i = 0;
-	j = 0;
-	while (str[i])
+	while (j >= 0)
 	{
-		while (str[i] && str[i] == s)
-			i++;
-		start = i;
-		while (str[i] && str[i] != s)
-			i++;
-		if (start != i)
-			p[j] = ft_memcpy(p[j], str + start, i - start);
-		if (start != i)
-			p[j][i - start] = '\0';
-		if (!p)
-			return (freefun(p, j));
-		j++;
-		if (str[i] == '\0')
-			return (p);
-		i++;
+		free(p[j]);
+		j--;
 	}
-	return (p);
+	free(p);
+	return (NULL);
+}
+char **list(char **lst, const char *s, char c)
+{
+    int i = 0, j = 0, k = 0;
+
+    while (s[i])
+    {
+        if (s[i] != c)
+        {
+            k = i;
+            while (s[i] && s[i] != c)
+                i++;
+            lst[j] = malloc_word(s, k, i);
+            if (!lst[j])
+                return freefun(lst, j);
+            j++;
+        }
+        else
+            i++;
+    }
+    lst[j] = NULL;
+    return lst;
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**p;
-
+    char **lst;
+	
 	if (!s)
 		return (NULL);
-	p = (char **)malloc(sizeof(char *) * ((words_nbr(s, c) + 1)));
-	if (!p)
-		return (NULL);
-	p = malword(s, c, p);
-	if (!p)
-		return (NULL);
-	p = word(s, c, p);
-	p[words_nbr(s, c)] = NULL;
-	return (p);
+    lst = (char **)malloc((words_nbr(s,c) + 1) * sizeof(char *));
+    if (!lst)
+        return (NULL);
+    return (list(lst,s,c));
+}
+int main()
+{
+    char    **lst;
+    char    *s;
+    char    c;
+
+    s = "ana smii\0iti charaf";
+    c = '\0'; 
+    lst = ft_split(s,c);
+   int i = 0;
+    while (lst[i])
+    {
+        printf("%s\n", lst[i]);
+        i++;
+    }
 }

@@ -6,7 +6,7 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 18:08:50 by mboumlik          #+#    #+#             */
-/*   Updated: 2023/11/30 20:42:04 by mboumlik         ###   ########.fr       */
+/*   Updated: 2023/12/01 15:31:27 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,20 @@
 
 int	main(void)
 {
-    char *str = "hello";
     int i = 0;
-    //printf("%lu \n",ft_strlcat(NULL,NULL,0));
-    char **ptr = ft_split(NULL, (char *)NULL);
-    for(int i = 0; ptr[i]; i++)
-        printf("%s\n", ptr[i]);
+    int c[10];
+    ft_memset(c, 0, 40);
+    while (i < 10)
+    {
+        ft_memset(c + i, _INT_MAX ,sizeof(c));
+        printf("c[%d] == [%d] \n",i,c[i]);
+        i++;
+    }
+    
+    
+    
+    
+    
     
     
 }
