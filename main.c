@@ -6,7 +6,7 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 18:08:50 by mboumlik          #+#    #+#             */
-/*   Updated: 2023/12/01 15:31:27 by mboumlik         ###   ########.fr       */
+/*   Updated: 2023/12/04 20:54:19 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,4 @@
 
 int	main(void)
 {
-    int i = 0;
-    int c[10];
-    ft_memset(c, 0, 40);
-    while (i < 10)
-    {
-        ft_memset(c + i, _INT_MAX ,sizeof(c));
-        printf("c[%d] == [%d] \n",i,c[i]);
-        i++;
-    }
-    
-    
-    
-    
-    
-    
-    
 }

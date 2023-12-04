@@ -6,10 +6,11 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 16:19:06 by mboumlik          #+#    #+#             */
-/*   Updated: 2023/11/22 09:53:01 by mboumlik         ###   ########.fr       */
+/*   Updated: 2023/12/04 13:20:30 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include "libft.h"
 
 int	ft_atoi(const char *str)
@@ -32,10 +33,6 @@ int	ft_atoi(const char *str)
 	while ((str[i] >= '0' && str[i] <= '9'))
 	{
 		j = j * 10 + str[i] - '0';
-		if (j > 9223372036854775807 && sign == -1)
-			return (0);
-		else if (j > 9223372036854775807 && sign == 1)
-			return (-1);
 		i++;
 	}
 	return ((int)j * sign);

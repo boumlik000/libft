@@ -6,14 +6,13 @@
 #    By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/04 15:06:23 by rlamtaou          #+#    #+#              #
-#    Updated: 2023/11/30 17:24:12 by mboumlik         ###   ########.fr        #
+#    Updated: 2023/12/04 11:56:40 by mboumlik         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 CC = cc
 CFLAGS = -Wall -Wextra  -Werror 
-RM = rm -f
 AR = ar -rc
 
 SRC = ft_isalpha.c\
@@ -64,14 +63,12 @@ $(NAME): $(OBJ)
 	$(AR) $(NAME) $@
 
 clean:
-	$(RM) $(OBJ) 
+	rm -f $(OBJ) 
 
 fclean: clean
-	$(RM) $(NAME)
+	rm -f $(NAME) 
 
 re: fclean all
-
-.PHONY: all clean fclean re 
 
 so:
 	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)

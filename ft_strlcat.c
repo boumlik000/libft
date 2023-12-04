@@ -6,7 +6,7 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 18:02:20 by mboumlik          #+#    #+#             */
-/*   Updated: 2023/11/30 17:57:22 by mboumlik         ###   ########.fr       */
+/*   Updated: 2023/12/04 20:38:59 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t n)
 	size_t	sum;
 
 	if (!dest && !n)
-		return (0);
+		return (ft_strlen(src));
 	len_s = ft_strlen(src);
 	len_d = ft_strlen(dest);
 	i = 0;

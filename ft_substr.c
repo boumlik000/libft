@@ -6,7 +6,7 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 09:37:47 by mboumlik          #+#    #+#             */
-/*   Updated: 2023/11/22 09:41:15 by mboumlik         ###   ########.fr       */
+/*   Updated: 2023/12/02 11:41:39 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!s)
 		return (NULL);
 	if (start >= ft_strlen(s))
-		return (ft_strdup(""));
+		return (ft_strdup("\0"));
 	if (start + len >= ft_strlen(s))
 		substr = malloc(sizeof(char) * (ft_strlen(s) - start + 1));
 	else

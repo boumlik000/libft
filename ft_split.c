@@ -6,11 +6,9 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 21:14:34 by mboumlik          #+#    #+#             */
-/*   Updated: 2023/12/01 19:06:42 by mboumlik         ###   ########.fr       */
+/*   Updated: 2023/12/04 21:00:26 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 #include "libft.h"
 
@@ -37,25 +35,27 @@ int	words_nbr(const char *str, char s)
 	}
 	return (words_count);
 }
-char    *malloc_word(const char *s, int b, int e)
-{
-    int i;
-    char *str;
 
-    str = (char *)malloc((e - b + 1) * sizeof(char));
-    if (!str)
-        return (NULL);
-    i = 0;
-    while(b < e)
-    {
-        str[i] = s[b];
-        i++;
-        b++;
-    }
-    str[i] = '\0';
-    return str;
+static char	*malloc_word(const char *s, int b, int e)
+{
+	int		i;
+	char	*str;
+
+	str = (char *)malloc((e - b + 1) * sizeof(char));
+	if (!str)
+		return (NULL);
+	i = 0;
+	while (b < e)
+	{
+		str[i] = s[b];
+		i++;
+		b++;
+	}
+	str[i] = '\0';
+	return (str);
 }
-char	**freefun(char **p, int j)
+
+static char	**freefun(char **p, int j)
 {
 	while (j >= 0)
 	{
@@ -65,53 +65,43 @@ char	**freefun(char **p, int j)
 	free(p);
 	return (NULL);
 }
-char **list(char **lst, const char *s, char c)
-{
-    int i = 0, j = 0, k = 0;
 
-    while (s[i])
-    {
-        if (s[i] != c)
-        {
-            k = i;
-            while (s[i] && s[i] != c)
-                i++;
-            lst[j] = malloc_word(s, k, i);
-            if (!lst[j])
-                return freefun(lst, j);
-            j++;
-        }
-        else
-            i++;
-    }
-    lst[j] = NULL;
-    return lst;
+static char	**list(char **lst, const char *s, char c)
+{
+	int	i;
+	int	j;
+	int	k;
+
+	i = 0;
+	j = 0;
+	k = 0;
+	while (s[i])
+	{
+		if (s[i] != c)
+		{
+			k = i;
+			while (s[i] && s[i] != c)
+				i++;
+			lst[j] = malloc_word(s, k, i);
+			if (!lst[j])
+				return (freefun(lst, j));
+			j++;
+		}
+		else
+			i++;
+	}
+	lst[j] = NULL;
+	return (lst);
 }
 
 char	**ft_split(char const *s, char c)
 {
-    char **lst;
-	
+	char	**lst;
+
 	if (!s)
 		return (NULL);
-    lst = (char **)malloc((words_nbr(s,c) + 1) * sizeof(char *));
-    if (!lst)
-        return (NULL);
-    return (list(lst,s,c));
-}
-int main()
-{
-    char    **lst;
-    char    *s;
-    char    c;
-
-    s = "ana smii\0iti charaf";
-    c = '\0'; 
-    lst = ft_split(s,c);
-   int i = 0;
-    while (lst[i])
-    {
-        printf("%s\n", lst[i]);
-        i++;
-    }
+	lst = (char **)malloc((words_nbr(s, c) + 1) * sizeof(char *));
+	if (!lst)
+		return (NULL);
+	return (list(lst, s, c));
 }

@@ -13,12 +13,12 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <ctype.h>
+# include <stddef.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
 # include <strings.h>
 # include <unistd.h>
-# include <stddef.h>
 
 int		ft_isalnum(int x);
 int		ft_isalpha(int str);
