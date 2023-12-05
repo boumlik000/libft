@@ -6,7 +6,7 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 09:46:17 by mboumlik          #+#    #+#             */
-/*   Updated: 2023/12/05 15:25:54 by mboumlik         ###   ########.fr       */
+/*   Updated: 2023/12/05 18:44:48 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,17 +37,22 @@ char	*ft_strtrim(char const *s1, char const *set)
 	{
 		if (!s1)
 			return (NULL);
-		else
+		else if (!set)
 			return ((char *)s1);
+		return (NULL);
 	}
+	// if (!*set || !*s1)
+	// 	return (NULL);
 	while (s1[x] && check(s1[x], (char *)set))
 		x++;
 	len = ft_strlen(s1);
-	while (s1[len - 1] && check(s1[len - 1], (char *)set) && len > x)
+
+	while (len > 0 &&  s1[len - 1] && check(s1[len - 1], (char *)set) && len > x)
 		len--;
 	if (len <= x)
 		return (ft_strdup(""));
-	if (!(result = (char *)malloc(sizeof(char) * (len - x + 1))))
+	result = (char *)malloc(sizeof(char) * (len - x + 1));
+	if (!result)
 		return (NULL);
 	ft_memcpy(result, s1 + x, len - x);
 	result[len - x] = '\0';
