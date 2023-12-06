@@ -6,7 +6,7 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 17:10:15 by mboumlik          #+#    #+#             */
-/*   Updated: 2023/12/04 20:38:16 by mboumlik         ###   ########.fr       */
+/*   Updated: 2023/12/06 13:53:09 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,3 +30,10 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	ft_memcpy(dest, src, n);
 	return (dest);
 }
+// int main()
+// {
+// 	char c[] = "hello world";
+// 	char *x = ft_memmove(c,c+5,6);
+// 	printf("%s",x);	
+// 	return 0;
+// }

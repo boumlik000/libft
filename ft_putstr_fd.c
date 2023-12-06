@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mboumlik <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 11:41:46 by mboumlik          #+#    #+#             */
-/*   Updated: 2023/11/14 11:41:48 by mboumlik         ###   ########.fr       */
+/*   Updated: 2023/12/06 16:48:29 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <fcntl.h>
 
 void	ft_putstr_fd(char *s, int fd)
 {
@@ -25,3 +26,15 @@ void	ft_putstr_fd(char *s, int fd)
 		i++;
 	}
 }
+// int main()
+// {
+// 	char *c[] ={"hello ","charaf "};
+// 	int i = 0;
+// 	int fd = open("mohamed.txt",O_CREAT | O_RDWR, 0777);
+// 	while (i <= 1)
+// 	{
+// 		ft_putendl_fd(c[i],fd);
+// 		i++;
+// 	}
+// 	return 0;
+// }

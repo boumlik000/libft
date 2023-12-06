@@ -6,7 +6,7 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 09:37:47 by mboumlik          #+#    #+#             */
-/*   Updated: 2023/12/05 20:43:17 by mboumlik         ###   ########.fr       */
+/*   Updated: 2023/12/06 17:58:30 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,3 +33,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	substr[i] = '\0';
 	return (substr);
 }
+// int main()
+// {
+// 	char c[] = "hello world";
+// 	printf("%s || %s",ft_substr(c,1,3),c);
+// 	return 0;
+// }

@@ -6,11 +6,10 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 16:19:06 by mboumlik          #+#    #+#             */
-/*   Updated: 2023/12/04 13:20:30 by mboumlik         ###   ########.fr       */
+/*   Updated: 2023/12/06 13:18:52 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "libft.h"
 
 int	ft_atoi(const char *str)
@@ -37,3 +36,8 @@ int	ft_atoi(const char *str)
 	}
 	return ((int)j * sign);
 }
+// int main()
+// {
+// 	printf("%d",ft_atoi("22"));
+// 	return (0);
+// }

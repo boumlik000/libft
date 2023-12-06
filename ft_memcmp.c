@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mboumlik <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 17:07:52 by mboumlik          #+#    #+#             */
-/*   Updated: 2023/11/13 17:07:56 by mboumlik         ###   ########.fr       */
+/*   Updated: 2023/12/06 13:45:05 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,3 +29,11 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
+// int main()
+// {
+// 	char c[] = "hello world";
+// 	char b[] = "hella world";
+// 	int x = ft_memcmp(c,b,6);
+// 	printf("%d",x);	
+// 	return 0;
+// }

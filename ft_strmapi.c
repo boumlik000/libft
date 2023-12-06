@@ -6,7 +6,7 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 11:25:08 by mboumlik          #+#    #+#             */
-/*   Updated: 2023/12/02 10:23:02 by mboumlik         ###   ########.fr       */
+/*   Updated: 2023/12/06 17:54:48 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t	n;
 	char	*string;
 
-	if (s == NULL)
+	if (!s || !f)
 		return (NULL);
 	string = str_allocation(ft_strlen(s));
 	if (!string)

@@ -6,7 +6,7 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 09:46:17 by mboumlik          #+#    #+#             */
-/*   Updated: 2023/12/05 19:02:49 by mboumlik         ###   ########.fr       */
+/*   Updated: 2023/12/05 21:07:00 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (s1[x] && check(s1[x], (char *)set))
 		x++;
 	len = ft_strlen(s1);
-	while (len > 0 &&  s1[len - 1] && check(s1[len - 1], (char *)set) && len > x)
+	while (len > 0 && s1[len - 1] && check(s1[len - 1], (char *)set) && len > x)
 		len--;
 	if (len <= x)
 		return (ft_strdup(""));

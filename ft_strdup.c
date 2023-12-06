@@ -6,7 +6,7 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 17:20:53 by mboumlik          #+#    #+#             */
-/*   Updated: 2023/12/05 20:38:08 by mboumlik         ###   ########.fr       */
+/*   Updated: 2023/12/06 17:54:13 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,3 +33,9 @@ char	*ft_strdup(const char *src)
 	dup[j] = '\0';
 	return (dup);
 }
+// int main()
+// {
+// 	char *c = "hello";
+// 	printf("%s",ft_strdup(c));
+// 	return 0;
+// }

@@ -6,7 +6,7 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 21:14:34 by mboumlik          #+#    #+#             */
-/*   Updated: 2023/12/04 21:00:26 by mboumlik         ###   ########.fr       */
+/*   Updated: 2023/12/06 17:24:25 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,3 +105,16 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	return (list(lst, s, c));
 }
+// int main()
+// {
+// 	char p[]="hello world hahaha";
+// 	char c = ' ';
+// 	int i = 0;
+// 	char **res = ft_split(p,c);
+// 	while (res[i])
+// 	{
+// 		printf("%s\n",res[i]);
+// 		i++;
+// 	}
+// 	return 0;
+// }
