@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/13 17:09:21 by mboumlik          #+#    #+#             */
-/*   Updated: 2023/12/06 22:04:50 by mboumlik         ###   ########.fr       */
+/*   Created: 2023/12/07 09:21:50 by mboumlik          #+#    #+#             */
+/*   Updated: 2023/12/07 09:21:55 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
+
 // int	main(void)
 // {
 // 	char c[] = "hello world";

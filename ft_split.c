@@ -6,7 +6,7 @@
 /*   By: mboumlik <mboumlik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 21:14:34 by mboumlik          #+#    #+#             */
-/*   Updated: 2023/12/06 17:24:25 by mboumlik         ###   ########.fr       */
+/*   Updated: 2023/12/07 09:43:57 by mboumlik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ int	words_nbr(const char *str, char s)
 			i++;
 		if (start != i)
 			words_count++;
-		if (str[i] == '\0')
-			return (words_count);
 		i++;
 	}
 	return (words_count);
@@ -107,7 +105,7 @@ char	**ft_split(char const *s, char c)
 }
 // int main()
 // {
-// 	char p[]="hello world hahaha";
+// 	char p[]="    hellom n  ;f     msd     anf    sa      sa world hahaha   ";
 // 	char c = ' ';
 // 	int i = 0;
 // 	char **res = ft_split(p,c);
